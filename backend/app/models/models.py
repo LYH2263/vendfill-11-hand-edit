@@ -32,4 +32,6 @@ class RefillOrder(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     location_id: Mapped[int] = mapped_column(ForeignKey("locations.id"))
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    # open=已生成(可手改) | void=已作废 | verified=已核销；后两者禁止手改
+    status: Mapped[str] = mapped_column(String(16), default="open")
     lines_json: Mapped[str] = mapped_column(Text, default="[]")
