@@ -5,4 +5,5 @@ __pycache__/
 frontend/dist/
 .pytest_cache/
 *.pyc
+*.db
 .DS_Store
